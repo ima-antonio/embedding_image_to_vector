@@ -1,53 +1,53 @@
-API de Extração de Vetores de Imagens
+#API de Extração de Vetores de Imagens<br>
 Esta é uma API simples construída com Flask que permite extrair vetores de características de imagens usando o modelo ResNet50 pré-treinado.
 
 Instalação
 Clone este repositório para o seu ambiente local:
-bash
+`bash
 Copy code
-git clone https://github.com/ima-antonio/embedding_image_to_vector
+git clone https://github.com/ima-antonio/embedding_image_to_vector`
 Acesse o diretório do projeto:
-bash
+`bash
 Copy code
-cd api-imagem-vetor
+cd api-imagem-vetor`
 Crie um ambiente virtual (opcional):
-bash
+`bash
 Copy code
-python -m venv env
+python -m venv env`
 Ative o ambiente virtual (opcional):
 No Windows:
-bash
+`bash
 Copy code
-env\Scripts\activate
+env\Scripts\activate`
 No macOS/Linux:
-bash
+`bash
 Copy code
-source env/bin/activate
+source env/bin/activate`
 Instale as dependências do projeto:
-Copy code
-pip install -r requirements.txt
+`Copy code
+pip install -r requirements.txt`
 Uso
 Inicie o servidor da API:
-Copy code
-python app.py
+`Copy code
+python api/vector.py`
 Envie uma solicitação POST para a rota /vectorize com a URL da imagem que deseja extrair o vetor de características.
 Exemplo usando o cURL:
 
-json
+`json
 Copy code
-curl -X POST -H "Content-Type: application/json" -d '{"url": "https://example.com/image.jpg"}' http://localhost:5000/vectorize
+curl -X POST -H "Content-Type: application/json" -d '{"url": "https://example.com/image.jpg"}' http://localhost:5000/vectorize`
 A resposta da API será um objeto JSON contendo o vetor de características da imagem.
 Exemplo de resposta:
 
-json
+`json
 Copy code
 {
   "vector": [-2.68184233e+00, -1.41177654e+00, 9.86026764e-01, -1.89144754e+00]
-}
+}`
 Exemplo de Array de Imagens e Similaridades
 Para calcular a similaridade entre uma imagem de teste e um array de imagens, você pode usar o seguinte exemplo de código:
 
-python
+`python
 Copy code
 import torch
 import torchvision.models as models
@@ -103,11 +103,8 @@ imagens_similares = [imagens_treinamento[indice] for indice in indices_similares
 
 print("As três imagens mais similares são:")
 for imagem_similar in imagens_similares:
-    print(imagem_similar)
+    print(imagem_similar)`
 Certifique-se de substituir os nomes das imagens e as URLs de acordo com o seu caso de uso.
 
 Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) e enviar pull requests para aprimorar esta API.
-
-Licença
-Este projeto está licenciado sob a licença MIT.

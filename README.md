@@ -5,7 +5,7 @@ Instalação
 Clone este repositório para o seu ambiente local:
 bash
 Copy code
-git clone https://github.com/seu-usuario/api-imagem-vetor
+git clone [https://github.com/seu-usuario/api-imagem-vetor](https://github.com/ima-antonio/embedding_image_to_vector)
 Acesse o diretório do projeto:
 bash
 Copy code
